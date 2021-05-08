@@ -20,7 +20,7 @@ private:
         window_title = L"小朋友齐打交";
         window_width = 2400;
         window_height = 1500;
-        frame_limit = 24;
+        frame_limit = 8;
     }
 
 public:

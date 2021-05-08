@@ -13,9 +13,9 @@ BattleScene::BattleScene()
     bg.setScale(f, f);
     fg.setScale(f, f);
 
-    auto & bandit_texture = AssetManager::getInstance()->getTexture("./res/charactor/bandit/bandit_0.png");
+    auto & bandit_texture = AssetManager::getInstance()->getTexture("./res/charactor/bandit.png");
     bandit.setTexture(bandit_texture);
-    bandit.setTextureRect(sf::IntRect(0,0, bandit_texture.getSize().x/ 10, bandit_texture.getSize().y / 7));
+    bandit.setTextureRect(sf::IntRect(0,0, bandit_texture.getSize().x/ 20, bandit_texture.getSize().y / 14));
     bandit.setScale(2, 2);
     bandit.setPosition(1000, 800);
 }
@@ -33,11 +33,11 @@ void BattleScene::update()
 {
     static int idx = 0;
     auto & bandit_texture = *bandit.getTexture();
-    int x = bandit_texture.getSize().x / 10;
-    int y = bandit_texture.getSize().y / 7;
-    bandit.setTextureRect(sf::IntRect(x*(idx % 10), y*(idx / 10), x, y));
+    int x = bandit_texture.getSize().x / 20;
+    int y = bandit_texture.getSize().y / 14;
+    bandit.setTextureRect(sf::IntRect(x*(idx % 20), y*(idx / 20), x, y));
     idx++;
-    if(idx >= 70) idx = 0;
+    if(idx >= 280) idx = 0;
 }
 void BattleScene::render(sf::RenderWindow & window) const
 {
