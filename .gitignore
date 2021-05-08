@@ -1,3 +1,7 @@
+SFML
+build
+.vscode
+res
 # Prerequisites
 *.d
 
