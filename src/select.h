@@ -47,6 +47,8 @@ private:
     sf::Sprite selected;
     sf::Text name;
     sf::Text start;
+    FighterName select_fighter;
+    
 public:
     static SelectScene *create() { return new SelectScene(); }
 
