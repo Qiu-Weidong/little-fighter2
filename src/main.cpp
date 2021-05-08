@@ -20,18 +20,18 @@ int main()
                             sf::Style::Titlebar | sf::Style::Close);
 
     sf::Image icon;
-    icon.loadFromFile("./res/face/freeze_f.png");
+    icon.loadFromFile("./resources/face/freeze_f.png");
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     window.setFramerateLimit(Setting::getInstance()->getFrameLimit());
 
     auto pDirector = Director::getInstance();
 
-    pDirector->registerScene(SceneName::Menu, MenuScene::create());
+    // pDirector->registerScene(SceneName::Menu, MenuScene::create());
     pDirector->registerScene(SceneName::Battle, BattleScene::create());
-    pDirector->registerScene(SceneName::Select, SelectScene::create());
+    // pDirector->registerScene(SceneName::Select, SelectScene::create());
 
 
-    pDirector->playWithScene(SceneName::Menu);
+    pDirector->playWithScene(SceneName::Battle);
 
     
 
