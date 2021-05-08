@@ -17,7 +17,7 @@ BattleScene::BattleScene()
     bandit.setTexture(bandit_texture);
     bandit.setTextureRect(sf::IntRect(0,0, bandit_texture.getSize().x/ 10, bandit_texture.getSize().y / 7));
     bandit.setScale(2, 2);
-    bandit.setPosition(1000, 700);
+    bandit.setPosition(1000, 800);
 }
 
 void BattleScene::processEvent(sf::RenderWindow & window)
@@ -31,7 +31,13 @@ void BattleScene::processEvent(sf::RenderWindow & window)
 }
 void BattleScene::update()
 {
-
+    static int idx = 0;
+    auto & bandit_texture = *bandit.getTexture();
+    int x = bandit_texture.getSize().x / 10;
+    int y = bandit_texture.getSize().y / 7;
+    bandit.setTextureRect(sf::IntRect(x*(idx % 10), y*(idx / 10), x, y));
+    idx++;
+    if(idx >= 70) idx = 0;
 }
 void BattleScene::render(sf::RenderWindow & window) const
 {

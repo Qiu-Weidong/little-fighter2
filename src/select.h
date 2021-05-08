@@ -48,12 +48,12 @@ private:
     sf::Text name;
     sf::Text start;
     FighterName select_fighter;
-    
+
 public:
     static SelectScene *create() { return new SelectScene(); }
 
     virtual void processEvent(sf::RenderWindow &) override;
-    virtual void update() override;
+    virtual void update() override {}
     virtual void render(sf::RenderWindow &) const override;
 };
 

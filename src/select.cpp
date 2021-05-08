@@ -111,9 +111,6 @@ void SelectScene::processEvent(sf::RenderWindow & window)
     }
 }
 
-
-void SelectScene::update() {}
-
 void SelectScene::render(sf::RenderWindow & window) const 
 {
     window.clear(sf::Color::Black);
