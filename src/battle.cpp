@@ -1,4 +1,6 @@
 #include <SFML/Window/Event.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/Time.hpp>
 #include <iostream>
 #include <vector>
 #include "battle.h"
@@ -23,15 +25,10 @@ BattleScene::BattleScene()
     bandit.setScale(2, 2);
     bandit.setPosition(1000, 800);
 
-    // 80 * 80
     for(int i=0;i<4;i++)
     {
         rects.push_back(sf::IntRect(480+80*i, 240, 80, 80));
     }
-    // rects.push_back(sf::IntRect(80, 160, 80, 80));
-    // rects.push_back(sf::IntRect(0, 0, 80, 80));
-    // rects.push_back(sf::IntRect(320+80*2,0, 80, 80));
-    // rects.push_back(sf::IntRect(320+80*1, 0, 80 , 80));
 }
 
 void BattleScene::processEvent(sf::RenderWindow & window)
@@ -62,6 +59,10 @@ void BattleScene::update()
     // {
     //     rects.push_back(sf::IntRect(320+80*i, 0, 80, 80));
     // }
+    static sf::Clock clock;
+    sf::Time elapsedTime = clock.restart();
+    std::cout << elapsedTime.asMilliseconds() << std::endl;
+
 }
 void BattleScene::render(sf::RenderWindow & window) const
 {
